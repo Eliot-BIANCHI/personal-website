@@ -1,0 +1,74 @@
+:root {
+    --font-scale-xs: 0.75rem;
+    --font-scale-sm: 0.875rem;
+    --font-scale-base: 1.2rem;
+    --font-scale-md: 1.5rem;
+    --font-scale-lg: 1.75rem;
+    --font-scale-xl: 2rem;
+
+    --transition-duration: 300ms;
+    --transition-timing-function: cubic-bezier(0.66, -0.2, 0.27, 1.15);
+
+    --primary-background-color: light-dark(#f9f9fb, #121212);
+    --secondary-background-color: light-dark(#f6f6f4, #343434);
+
+    --text-color: light-dark(hsl(220 15% 15%), hsl(220 15% 88%));
+    --icon-color: var(--text-color);
+    --border-color: var(--text-color);
+
+    --shadow-color: light-dark(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.06));
+    --shadow-color-strong: light-dark(
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0.08)
+    );
+
+    --base-opacity: 0.5;
+
+    --outline-offset: 2px;
+
+    --gap-xs: 2px;
+    --gap-sm: 5px;
+    --gap-base: 10px;
+    --gap-md: 15px;
+    --gap-lg: 20px;
+    --gap-xl: 30px;
+
+    --app-color: hsl(120, 45%, 78%);
+    --app-color-strong: hsl(120, 45%, 63%);
+
+    --button-color: light-dark(#dedede, #454545);
+    --button-color-strong: light-dark(#cdcdcd, #666);
+
+    --border-radius-sm: 2px;
+    --border-radius-md: 5px;
+    --border-radius-lg: 10px;
+
+    --app-navbar-height: 75px;
+
+    color-scheme: light dark;
+
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+}
+
+html[data-theme="light"] {
+    color-scheme: light !important;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark !important;
+}
+
+body {
+    background-color: var(--secondary-background-color);
+    margin: 0;
+    overflow-y: hidden;
+    transition: background-color var(--transition-duration)
+        var(--transition-timing-function);
+}
