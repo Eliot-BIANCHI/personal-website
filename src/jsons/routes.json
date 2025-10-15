@@ -1,0 +1,34 @@
+{
+  "navbar": [
+    { "name": { "en": "Home", "fr": "Accueil" }, "path": "/" },
+    { "name": { "en": "Courses", "fr": "Cours" }, "path": "/courses" }
+  ],
+  "courses": [
+    {
+      "name": { "en": "Mathematics", "fr": "Mathématiques" },
+      "sections": [
+        {
+          "name": { "en": "Probability", "fr": "Probabilité" },
+          "chapters": [
+            {
+              "name": {
+                "en": "Introduction",
+                "fr": "Introduction",
+                "assistant": "proba intro"
+              },
+              "path": "/mathematics/probability/introduction"
+            },
+            {
+              "name": {
+                "en": "Formulas",
+                "fr": "Formules",
+                "assistant": "proba formule"
+              },
+              "path": "/mathematics/probability/formulas"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
