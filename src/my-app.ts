@@ -31,9 +31,9 @@ export class MyApp extends LitElement {
       route.tag = module.default.tag;
     }
 
-    this.currentRoute = route;
-
     document.title = route.name;
+
+    this.currentRoute = route;
   }
 
   navigateTo(url: string) {

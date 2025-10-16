@@ -1,10 +1,10 @@
 :root {
     --font-scale-xs: 0.75rem;
-    --font-scale-sm: 0.875rem;
-    --font-scale-base: 1.2rem;
-    --font-scale-md: 1.5rem;
-    --font-scale-lg: 1.75rem;
-    --font-scale-xl: 2rem;
+    --font-scale-sm: 1rem;
+    --font-scale-base: 1.25rem;
+    --font-scale-md: 1.55rem;
+    --font-scale-lg: 2rem;
+    --font-scale-xl: 2.5rem;
 
     --transition-duration: 300ms;
     --transition-timing-function: cubic-bezier(0.66, -0.2, 0.27, 1.15);
