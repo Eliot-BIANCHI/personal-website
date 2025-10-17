@@ -10,8 +10,8 @@ export default class HomeView extends LitElement {
   render() {
     return html`
       <heading-1
-        mainTitle="Personal website"
-        subTitle="Eliot BIANCHI"
+        mainName="Personal website"
+        subName="Eliot BIANCHI"
         playAnimation
       ></heading-1>
     `;

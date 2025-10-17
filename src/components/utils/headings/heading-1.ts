@@ -109,6 +109,8 @@ export class Heading1 extends LitElement {
       background-color: var(--text-color);
       content: "";
       height: var(--bar-height);
+      transition: background-color var(--transition-duration)
+        var(--transition-timing-function);
       width: 100%;
 
       &.animate {
