@@ -14,11 +14,11 @@ export class AppNavbar extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    window.addEventListener("hashchange", () => this._onHashChange());
+    window.addEventListener("hashchange", this._onHashChange);
   }
 
   disconnectedCallback() {
-    window.removeEventListener("hashchange", () => this._onHashChange());
+    window.removeEventListener("hashchange", this._onHashChange);
     super.disconnectedCallback();
   }
 
@@ -80,9 +80,9 @@ export class AppNavbar extends LitElement {
     this.assistantOn ? startAssistant() : stopAssistant();
   }
 
-  private _onHashChange() {
+  private _onHashChange = () => {
     this.activePath = location.hash.slice(1) || "/";
-  }
+  };
 
   static styles = css`
     .app-navbar {
@@ -139,7 +139,7 @@ export class AppNavbar extends LitElement {
     .app-navbar__change-theme {
       --padding: 4px;
       --width: 24px;
-      background-color: #5b4acb;
+      background-color: var(--moon-color);
       border: none;
       border-radius: 99px;
       box-sizing: border-box;
@@ -153,7 +153,7 @@ export class AppNavbar extends LitElement {
       width: calc(var(--width) * 2 + var(--padding) * 2);
 
       &:hover {
-        background-color: #00076f;
+        background-color: var(--moon-color-strong);
       }
 
       &:focus-visible {
@@ -178,10 +178,10 @@ export class AppNavbar extends LitElement {
       }
 
       &.dark {
-        background-color: #ff9657;
+        background-color: var(--sun-color);
 
         &:hover {
-          background-color: #de3f52;
+          background-color: var(--sun-color-strong);
         }
 
         &::before {

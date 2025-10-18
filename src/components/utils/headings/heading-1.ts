@@ -10,6 +10,7 @@ export class Heading1 extends LitElement {
   @property({ type: String }) mainName: string = "";
   @property({ type: String }) subName: string | undefined;
   @property({ type: Boolean }) playAnimation: boolean = false;
+  @property({ type: Boolean }) fullScreen: boolean = false;
 
   firstUpdated() {
     if (this.playAnimation) {
@@ -78,7 +79,7 @@ export class Heading1 extends LitElement {
           `
         : "";
 
-    return html`<h1 class="heading-1">
+    return html`<h1 class="heading-1 ${this.fullScreen ? "full-screen" : ""}">
       <span class="heading-1__main-title">${this.mainName}</span>
       ${subName}
     </h1>`;
@@ -91,6 +92,7 @@ export class Heading1 extends LitElement {
     }
 
     .heading-1 {
+      box-sizing: border-box;
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -123,6 +125,19 @@ export class Heading1 extends LitElement {
       font-size: var(--font-scale-lg);
       font-weight: normal;
       letter-spacing: 5px;
+    }
+
+    .heading-1.full-screen {
+      height: calc(100dvh - var(--app-navbar-height));
+      justify-content: center;
+
+      & .heading-1__main-title {
+        font-size: var(--font-scale-xxl);
+      }
+
+      & .heading-1__sub-title {
+        font-size: var(--font-scale-xl);
+      }
     }
 
     .letter {

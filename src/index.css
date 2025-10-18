@@ -36,6 +36,16 @@
     --app-color: hsl(120, 45%, 78%);
     --app-color-strong: hsl(120, 45%, 63%);
 
+    --app-color-2: hsl(270 70% 60%);
+
+    --sun-color: #ff9657;
+    --sun-color-strong: #de3f52;
+
+    --moon-color: #5b4acb;
+    --moon-color-strong: #00076f;
+
+    --app-padding: 25px;
+
     --button-color: light-dark(#dedede, #454545);
     --button-color-strong: light-dark(#cdcdcd, #666);
 

@@ -16,16 +16,16 @@ export class MyApp extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    window.addEventListener("hashchange", () => this._handleRouting());
+    window.addEventListener("hashchange", this._handleRouting);
     this._handleRouting();
   }
 
   disconnectedCallback() {
-    window.removeEventListener("hashchange", () => this._handleRouting());
+    window.removeEventListener("hashchange", this._handleRouting);
     super.disconnectedCallback();
   }
 
-  private async _handleRouting() {
+  private _handleRouting = async () => {
     const path = location.hash.slice(1) || "/";
 
     const route =
@@ -39,7 +39,7 @@ export class MyApp extends LitElement {
     document.title = route.name;
 
     this.currentRoute = route;
-  }
+  };
 
   public navigateTo(url: string) {
     if (url === location.hash) return;
@@ -76,9 +76,11 @@ export class MyApp extends LitElement {
 
   static styles = css`
     #app {
+      box-sizing: border-box;
       color: var(--text-color);
       font-size: var(--font-scale-md);
-      padding: 25px;
+      height: calc(100dvh - var(--app-navbar-height));
+      overflow-y: auto;
       transition: color var(--transition-duration)
         var(--transition-timing-function);
     }
