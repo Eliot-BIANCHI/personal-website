@@ -1,0 +1,15 @@
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 8.4666665 8.4666666"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+    <path
+       style="fill:hsl(270 70% 60%);stroke-width:2.39138;paint-order:markers stroke fill;fill-opacity:1"
+       d="M 10.220116,-5.4483444e-5 A 4.2333331,4.2333331 0 0 1 8.103449,3.6661196 4.2333331,4.2333331 0 0 1 3.8701159,3.6661195 4.2333331,4.2333331 0 0 1 1.7534494,-5.4483444e-5 h 4.2333332 z"
+       transform="rotate(45)" />
+    <path
+       style="fill:hsl(120, 45%, 78%);stroke-width:2.3913;paint-order:markers stroke fill;fill-opacity:1"
+       d="M 1.753449,6.3782565e-5 A 4.233356,4.233356 0 0 1 5.986805,-4.2332922 4.233356,4.233356 0 0 1 10.220161,6.3782565e-5 H 5.986805 Z"
+       transform="matrix(0.70711057,0.70710299,-0.70711057,0.70710299,0,0)" />
+</svg>

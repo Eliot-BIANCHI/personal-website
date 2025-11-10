@@ -1,0 +1,127 @@
+:root {
+    /* ==== Typography ==== */
+    --font-xs: 0.75rem;
+    --font-sm: 1rem;
+    --font-base: 1.25rem;
+    --font-md: 1.55rem;
+    --font-lg: 2rem;
+    --font-xl: 2.5rem;
+
+    /* ==== Animation ==== */
+    --transition: 300ms cubic-bezier(0.66, -0.2, 0.27, 1.15);
+
+    /* ==== Layout & Spacing ==== */
+    --gap-xs: 2px;
+    --gap-sm: 5px;
+    --gap-base: 10px;
+    --gap-md: 15px;
+    --gap-lg: 20px;
+    --gap-xl: 30px;
+
+    --radius-sm: 2px;
+    --radius-md: 5px;
+    --radius-lg: 10px;
+
+    --navbar-height: 75px;
+    --toolbar-width: 50px;
+
+    /* ==== Colors ==== */
+    --base-opacity: 0.4;
+    --app-color: hsl(120, 45%, 78%);
+    --app-color-strong: hsl(120, 45%, 63%);
+    --app-color-2: hsl(270 70% 60%);
+
+    /* Light / Dark themes */
+    --bg-primary-light: hsl(240, 20%, 98%);
+    --bg-primary-dark: hsl(0, 0%, 7%);
+    --bg-secondary-light: #f1f1f1;
+    --bg-secondary-dark: #343434;
+    --bg-tertiary-light: #dedede;
+    --bg-tertiary-dark: #454545;
+
+    --text-light: hsl(220 15% 15%);
+    --text-dark: hsl(220 15% 88%);
+
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-dark: rgba(0, 0, 0, 0.06);
+
+    --shadow-strong-light: rgba(255, 255, 255, 0.05);
+    --shadow-strong-dark: rgba(255, 255, 255, 0.08);
+
+    /* Status colors */
+    --info: hsl(200 70% 75%);
+    --success: hsl(120 50% 65%);
+    --warning: hsl(33 90% 65%);
+    --danger: hsl(358 70% 65%);
+
+    /* Icons / special */
+    --sun: #ff9657;
+    --sun-strong: #de3f52;
+    --moon: #5b4acb;
+    --moon-strong: #00076f;
+
+    color-scheme: light dark;
+
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+}
+
+/* ==== Derived Light/Dark variables ==== */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-primary: var(--bg-primary-light);
+        --bg-secondary: var(--bg-secondary-light);
+        --bg-tertiary: var(--bg-tertiary-light);
+        --text: var(--text-light);
+        --text-faded: color-mix(
+            in srgb,
+            var(--text) var(--base-opacity),
+            transparent
+        );
+        --shadow: var(--shadow-light);
+        --shadow-strong: var(--shadow-strong-light);
+        --button: #dedede;
+        --button-strong: #cdcdcd;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: var(--bg-primary-dark);
+        --bg-secondary: var(--bg-secondary-dark);
+        --bg-tertiary: var(--bg-tertiary-dark);
+        --text: var(--text-dark);
+        --text-faded: color-mix(
+            in srgb,
+            var(--text) var(--base-opacity),
+            transparent
+        );
+        --shadow: var(--shadow-dark);
+        --shadow-strong: var(--shadow-strong-dark);
+        --button: #454545;
+        --button-strong: #666;
+    }
+}
+
+/* ==== Theme Overrides ==== */
+html[data-theme="light"] {
+    color-scheme: light !important;
+}
+html[data-theme="dark"] {
+    color-scheme: dark !important;
+}
+
+/* ==== Body ==== */
+body {
+    margin: 0;
+    overflow-y: hidden;
+    background-color: var(--bg-secondary);
+    color: var(--text);
+    transition: background-color var(--transition);
+}
