@@ -6,9 +6,12 @@
     --font-md: 1.55rem;
     --font-lg: 2rem;
     --font-xl: 2.5rem;
+    --font-xxl: 3rem;
 
     /* ==== Animation ==== */
-    --transition: 300ms cubic-bezier(0.66, -0.2, 0.27, 1.15);
+    --transition-duration: 300ms;
+    --transition-timing-function: cubic-bezier(0.66, -0.2, 0.27, 1.15);
+    --transition: var(--transition-duration) var(--transition-timing-function);
 
     /* ==== Layout & Spacing ==== */
     --gap-xs: 2px;
@@ -22,8 +25,11 @@
     --radius-md: 5px;
     --radius-lg: 10px;
 
+    --offset-sm: 2px;
+    --offset-md: 4px;
+    --offset-lg: 6px;
+
     --navbar-height: 75px;
-    --toolbar-width: 50px;
 
     /* ==== Colors ==== */
     --base-opacity: 0.4;
@@ -31,7 +37,7 @@
     --app-color-strong: hsl(120, 45%, 63%);
     --app-color-2: hsl(270 70% 60%);
 
-    /* Light / Dark themes */
+    /* ==== Light / Dark themes ==== */
     --bg-primary-light: hsl(240, 20%, 98%);
     --bg-primary-dark: hsl(0, 0%, 7%);
     --bg-secondary-light: #f1f1f1;
@@ -48,13 +54,13 @@
     --shadow-strong-light: rgba(255, 255, 255, 0.05);
     --shadow-strong-dark: rgba(255, 255, 255, 0.08);
 
-    /* Status colors */
+    /* ==== Status colors ==== */
     --info: hsl(200 70% 75%);
     --success: hsl(120 50% 65%);
     --warning: hsl(33 90% 65%);
     --danger: hsl(358 70% 65%);
 
-    /* Icons / special */
+    /* ==== Icons / special ==== */
     --sun: #ff9657;
     --sun-strong: #de3f52;
     --moon: #5b4acb;
@@ -122,6 +128,6 @@ body {
     margin: 0;
     overflow-y: hidden;
     background-color: var(--bg-secondary);
-    color: var(--text);
+    overflow-y: auto;
     transition: background-color var(--transition);
 }
