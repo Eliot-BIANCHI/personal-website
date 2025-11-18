@@ -15,7 +15,7 @@
 
 <style>
     .shape-diagonal {
-        --background-color: var(--app-color);
+        --background-color: var(--app-color-strong);
         --skew-angle: -5deg;
         isolation: isolate;
         position: relative;

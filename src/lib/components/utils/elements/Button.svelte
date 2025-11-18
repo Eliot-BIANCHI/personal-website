@@ -44,6 +44,8 @@
     class:warning={classes.color === "warning"}
     class:danger={classes.color === "danger"}
     class:info={classes.color === "info"}
+    class:hide-above-1024={classes.hide?.above1024}
+    class:hide-below-1024={classes.hide?.below1024}
     class:position-relative={classes.position === "relative"}
     class:position-absolute={classes.position === "absolute"}
     class:position-fixed={classes.position === "fixed"}
@@ -120,6 +122,18 @@
 
         &.position-fixed {
             position: fixed;
+        }
+    }
+
+    @media all and (width >= 1024px) {
+        .button.hide-above-1024 {
+            display: none;
+        }
+    }
+
+    @media all and (width < 1024px) {
+        .button.hide-below-1024 {
+            display: none;
         }
     }
 </style>

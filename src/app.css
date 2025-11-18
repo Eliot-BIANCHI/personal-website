@@ -40,7 +40,7 @@
     /* ==== Light / Dark themes ==== */
     --bg-primary-light: hsl(240, 20%, 98%);
     --bg-primary-dark: hsl(0, 0%, 7%);
-    --bg-secondary-light: #f1f1f1;
+    --bg-secondary-light: #ededed;
     --bg-secondary-dark: #343434;
     --bg-tertiary-light: #dedede;
     --bg-tertiary-dark: #454545;
@@ -61,10 +61,8 @@
     --danger: hsl(358 70% 65%);
 
     /* ==== Icons / special ==== */
-    --sun: #ff9657;
-    --sun-strong: #de3f52;
+    --sun: #de3f52;
     --moon: #5b4acb;
-    --moon-strong: #00076f;
 
     color-scheme: light dark;
 
@@ -79,40 +77,28 @@
 }
 
 /* ==== Derived Light/Dark variables ==== */
-@media (prefers-color-scheme: light) {
-    :root {
-        --bg-primary: var(--bg-primary-light);
-        --bg-secondary: var(--bg-secondary-light);
-        --bg-tertiary: var(--bg-tertiary-light);
-        --text: var(--text-light);
-        --text-faded: color-mix(
-            in srgb,
-            var(--text) var(--base-opacity),
-            transparent
-        );
-        --shadow: var(--shadow-light);
-        --shadow-strong: var(--shadow-strong-light);
-        --button: #dedede;
-        --button-strong: #cdcdcd;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-primary: var(--bg-primary-dark);
-        --bg-secondary: var(--bg-secondary-dark);
-        --bg-tertiary: var(--bg-tertiary-dark);
-        --text: var(--text-dark);
-        --text-faded: color-mix(
-            in srgb,
-            var(--text) var(--base-opacity),
-            transparent
-        );
-        --shadow: var(--shadow-dark);
-        --shadow-strong: var(--shadow-strong-dark);
-        --button: #454545;
-        --button-strong: #666;
-    }
+:root {
+    --bg-primary: light-dark(var(--bg-primary-light), var(--bg-primary-dark));
+    --bg-secondary: light-dark(
+        var(--bg-secondary-light),
+        var(--bg-secondary-dark)
+    );
+    --bg-tertiary: light-dark(
+        var(--bg-tertiary-light),
+        var(--bg-tertiary-dark)
+    );
+    --text: light-dark(var(--text-light), var(--text-dark));
+    --text-faded: light-dark(
+        color-mix(in srgb, var(--text) var(--base-opacity), transparent),
+        color-mix(in srgb, var(--text) var(--base-opacity), transparent)
+    );
+    --shadow: light-dark(var(--shadow-light), var(--shadow-dark));
+    --shadow-strong: light-dark(
+        var(--shadow-strong-light),
+        var(--shadow-strong-dark)
+    );
+    --button: light-dark(#dedede, #454545);
+    --button-strong: light-dark(#cdcdcd, #666);
 }
 
 /* ==== Theme Overrides ==== */
@@ -126,8 +112,7 @@ html[data-theme="dark"] {
 /* ==== Body ==== */
 body {
     margin: 0;
-    overflow-y: hidden;
     background-color: var(--bg-secondary);
-    overflow-y: auto;
+    overflow-y: scroll;
     transition: background-color var(--transition);
 }

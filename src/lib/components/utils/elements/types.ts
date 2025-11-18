@@ -3,6 +3,10 @@ import type { Color, Position } from "$lib/types";
 export interface ButtonClasses {
   round?: boolean;
   color?: Color;
+  hide?: {
+    above1024?: boolean;
+    below1024?: boolean;
+  };
   position?: Position;
   positioned?: {
     top?: number;
@@ -25,9 +29,19 @@ export type IconName =
   | "arrow--up-with-stroke"
   | "cross"
   | "menu"
+  | "microphone"
+  | "navbar--appendix"
+  | "navbar--courses"
+  | "navbar--home"
+  | "navbar--not-found"
+  | "navbar--sandbox"
+  | "settings"
   | "suit--club"
   | "suit--diamond"
   | "suit--heart"
-  | "suit--spade";
+  | "suit--spade"
+  | "theme--moon"
+  | "theme--sun"
+  | "vertical-dots";
 
 export type InputType = "text" | "number";

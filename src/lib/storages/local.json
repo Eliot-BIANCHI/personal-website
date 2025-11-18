@@ -1,0 +1,9 @@
+{
+  "NAVBAR": {
+    "OPENED": "navbar:opened",
+    "IGNORE_FIRST_SCROLL": "ignore-first-scroll"
+  },
+  "SETTINGS": {
+    "ASSISTANT": "settings:assistant"
+  }
+}

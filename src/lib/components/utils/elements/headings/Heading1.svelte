@@ -59,7 +59,8 @@
 
     {#if subName}
         <span
-            class="heading-1__middle-bar animate"
+            class="heading-1__middle-bar"
+            class:animate={playAnimation}
             style="animation-duration: {numberOfElementsAnimated *
                 LETTER_TIMEOUT_IN_MS}ms;"
         ></span>
