@@ -1,0 +1,9 @@
+{
+  "title": "Paramètres",
+  "field1": {
+    "name": "Language"
+  },
+  "field2": {
+    "name": "Assistant?"
+  }
+}

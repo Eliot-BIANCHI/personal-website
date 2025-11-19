@@ -23,12 +23,12 @@
     const languages: SelectOption[] = [
         {
             iconName: "flag--english",
-            text: i18n.t.navbar.settings.field1.values.english,
+            text: "English",
             value: "en",
         },
         {
             iconName: "flag--french",
-            text: i18n.t.navbar.settings.field1.values.french,
+            text: "Français",
             value: "fr",
         },
     ];
@@ -87,12 +87,12 @@
         }}
     />
 
-    <Heading3 name={i18n.t.navbar.settings.title} />
+    <Heading3 name={i18n.t.settings.title} />
 
     <ul class="settings">
         <li class="setting">
             <Select
-                label={i18n.t.navbar.settings.field1.name}
+                label={i18n.t.settings.field1.name}
                 name="language"
                 options={languages.map(({ iconName, text, value }) => ({
                     iconName,
@@ -106,7 +106,7 @@
         {#if browserImplementsSpeechRecognition}
             <li class="setting">
                 <Toggle
-                    label={i18n.t.navbar.settings.field2.name}
+                    label={i18n.t.settings.field2.name}
                     name="assistant"
                     checked={app.assistant}
                     onchange={() => app.toggleAssistant()}

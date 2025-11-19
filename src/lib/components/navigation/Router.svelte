@@ -5,16 +5,41 @@
     import NotFound from "$lib/pages/NotFound.svelte";
     import Sandbox from "$lib/pages/Sandbox.svelte";
 
-    import { LINKS, type Href } from "./types";
+    import ProbabilitiesFormulas from "$lib/pages/mathematics/probabilities/Formulas.svelte";
+    import ProbabilitiesIntroduction from "$lib/pages/mathematics/probabilities/Introduction.svelte";
+
+    import { NAVBAR, type Href as NavbarHref } from "./links/navbar";
+    import {
+        COURSES_FLATTENED,
+        type Href as CourseHref,
+    } from "./links/courses";
+    import { i18n } from "$lib/i18n.svelte";
+    import type { LocalizedName } from "$lib/types";
+
+    type Href = NavbarHref | CourseHref;
 
     const getPath = () => (location.hash.slice(1) || "/") as Href;
 
     let currentRoute: Href = $state(getPath());
 
+    const NOT_FOUND: LocalizedName = {
+        en: "Not found",
+        fr: "Page non trouvée",
+    };
+
     $effect(() => {
-        const link = LINKS.find((link) => link.href === currentRoute);
-        if (link === undefined) return;
-        document.title = link.name;
+        const navbarLink = NAVBAR.find((link) => link.href === currentRoute);
+        const courseLink = COURSES_FLATTENED.find(
+            (link) => link.href === currentRoute,
+        );
+
+        if (navbarLink !== undefined) {
+            document.title = navbarLink.name[i18n.lang];
+        } else if (courseLink !== undefined) {
+            document.title = courseLink.name[i18n.lang];
+        } else {
+            document.title = NOT_FOUND[i18n.lang];
+        }
     });
 
     function onhashchange() {
@@ -33,6 +58,10 @@
         <Courses />
     {:else if currentRoute === "/sandbox"}
         <Sandbox />
+    {:else if currentRoute === "/mathematics/probabilities/formulas"}
+        <ProbabilitiesFormulas />
+    {:else if currentRoute === "/mathematics/probabilities/introduction"}
+        <ProbabilitiesIntroduction />
     {:else}
         <NotFound />
     {/if}

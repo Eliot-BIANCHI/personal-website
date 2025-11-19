@@ -5,16 +5,28 @@
     import Icon from "$lib/components/utils/elements/Icon.svelte";
     import Button from "$lib/components/utils/elements/Button.svelte";
     import LOCAL_STORAGE from "$lib/storages/local.json";
-    import { LINKS } from "./types";
+    import { NAVBAR } from "./links/navbar";
+    import { COURSES_FLATTENED } from "./links/courses";
     import { app } from "$lib/App.svelte";
     import { i18n } from "$lib/i18n.svelte";
 
     const HIDE_NAVBAR_Y_SCROLL = 80;
 
+    const HOME_INDEX = NAVBAR.findIndex((link) => link.href === "/")!;
+    const COURSES_INDEX = NAVBAR.findIndex((link) => link.href === "/courses")!;
+
     let hash = $state(location.hash);
-    let index = $derived(
-        LINKS.findIndex((link) => hash === "" || "#" + link.href === hash),
-    );
+    let index = $derived.by(() => {
+        if (hash === "") return HOME_INDEX;
+
+        const index = COURSES_FLATTENED.findIndex(
+            (link) => `#${link.href}` === hash,
+        );
+
+        if (index !== -1) return COURSES_INDEX;
+
+        return NAVBAR.findIndex((link) => `#${link.href}` === hash);
+    });
 
     let hidden = $state(false);
     let lastScrollY = $state(window.scrollY);
@@ -78,7 +90,7 @@
     />
 
     <ul class="navbar__links" class:opened>
-        {#each LINKS as { href, name, iconName }}
+        {#each NAVBAR as { href, name, iconName }}
             <li class="navbar__link">
                 <a
                     class="link"
@@ -89,7 +101,7 @@
                     }}
                 >
                     <Icon name={iconName} />
-                    {i18n.t.navbar.links[name]}
+                    {name[i18n.lang]}
                 </a>
             </li>
         {/each}
@@ -99,12 +111,12 @@
         <li class="navbar__not-found">
             <Icon name="navbar--not-found" />
         </li>
-        {#each LINKS as { href, name, iconName }}
+        {#each NAVBAR as { href, name, iconName }}
             <li class="navbar__link-overview">
                 <a
                     class="link-overview"
                     {href}
-                    data-name={i18n.t.navbar.links[name]}
+                    data-name={name[i18n.lang]}
                     onclick={(event) => {
                         event.preventDefault();
                         navigate(href);

@@ -5,8 +5,10 @@ import { defaultTranslations } from "./locales/default";
 
 class I18n {
   t = $state<Translations>(defaultTranslations);
+  lang: Language = $state("en");
 
   async load(lang: Language) {
+    this.lang = lang;
     try {
       const { default: translations } = await import(
         `./locales/${lang}/translations.ts`

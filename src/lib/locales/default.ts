@@ -1,35 +1,22 @@
 import type { Translations } from "./translations";
 
 export const defaultTranslations: Translations = {
-  navbar: {
-    links: {
-      home: "Home",
-      courses: "Courses",
-      sandbox: "Sandbox",
-      appendix: "Appendix",
+  settings: {
+    title: "",
+    field1: {
+      name: "",
     },
-    settings: {
-      title: "Settings",
-      field1: {
-        name: "Language",
-        values: {
-          english: "English",
-          french: "French",
-        },
-      },
-      field2: {
-        name: "Assistant?",
-      },
+    field2: {
+      name: "",
     },
   },
   pages: {
     home: {
-      title: "Personnal website",
-      presentation:
-        "Student in Artificial intelligence at the ISIMA of Clermont-Ferrand.",
+      title: "",
+      presentation: "",
     },
     notFound: {
-      message: "We can't find the page you're looking for",
+      message: "",
     },
   },
 };

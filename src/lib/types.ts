@@ -1,6 +1,11 @@
 export const LANGUAGES = ["en", "fr"] as const;
 export type Language = (typeof LANGUAGES)[number];
 
+export interface LocalizedName {
+  en: string;
+  fr: string;
+}
+
 export const COLORS = ["success", "warning", "danger", "info", "app"] as const;
 export type Color = (typeof COLORS)[number];
 
