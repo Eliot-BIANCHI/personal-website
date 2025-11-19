@@ -7,6 +7,7 @@
     import LOCAL_STORAGE from "$lib/storages/local.json";
     import { LINKS } from "./types";
     import { app } from "$lib/App.svelte";
+    import { i18n } from "$lib/i18n.svelte";
 
     const HIDE_NAVBAR_Y_SCROLL = 80;
 
@@ -88,7 +89,7 @@
                     }}
                 >
                     <Icon name={iconName} />
-                    {name.fr}
+                    {i18n.t.navbar.links[name]}
                 </a>
             </li>
         {/each}
@@ -103,7 +104,7 @@
                 <a
                     class="link-overview"
                     {href}
-                    data-name={name.fr}
+                    data-name={i18n.t.navbar.links[name]}
                     onclick={(event) => {
                         event.preventDefault();
                         navigate(href);

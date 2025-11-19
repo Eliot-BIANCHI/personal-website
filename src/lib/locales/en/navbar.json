@@ -1,0 +1,21 @@
+{
+  "links": {
+    "home": "Home",
+    "courses": "Courses",
+    "sandbox": "Sandbox",
+    "appendix": "Appendix"
+  },
+  "settings": {
+    "title": "Settings",
+    "field1": {
+      "name": "Language",
+      "values": {
+        "english": "English",
+        "french": "French"
+      }
+    },
+    "field2": {
+      "name": "Assistant?"
+    }
+  }
+}

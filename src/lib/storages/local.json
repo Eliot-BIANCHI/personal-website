@@ -4,6 +4,7 @@
     "IGNORE_FIRST_SCROLL": "ignore-first-scroll"
   },
   "SETTINGS": {
-    "ASSISTANT": "settings:assistant"
+    "ASSISTANT": "settings:assistant",
+    "LANGUAGE": "settings:language"
   }
 }

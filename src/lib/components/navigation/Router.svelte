@@ -5,16 +5,16 @@
     import NotFound from "$lib/pages/NotFound.svelte";
     import Sandbox from "$lib/pages/Sandbox.svelte";
 
-    import { LINKS, type Route } from "./types";
+    import { LINKS, type Href } from "./types";
 
-    const getPath = () => (location.hash.slice(1) || "/") as Route;
+    const getPath = () => (location.hash.slice(1) || "/") as Href;
 
-    let currentRoute: Route = $state(getPath());
+    let currentRoute: Href = $state(getPath());
 
     $effect(() => {
         const link = LINKS.find((link) => link.href === currentRoute);
         if (link === undefined) return;
-        document.title = link.name.fr;
+        document.title = link.name;
     });
 
     function onhashchange() {

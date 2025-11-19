@@ -4,11 +4,12 @@
     import Diagonal from "$lib/components/utils/shapes/Diagonal.svelte";
 
     import src from "$assets/images/suit.jpeg";
+    import { i18n } from "$lib/i18n.svelte";
 </script>
 
 <div class="routing">
     <Heading1
-        mainName="Site personnel"
+        mainName={i18n.t.pages.home.title}
         subName="Eliot BIANCHI"
         playAnimation
         fullScreen
@@ -16,10 +17,7 @@
 
     <Diagonal>
         <div class="profile-section">
-            <Paragraph>
-                Étudiant en Intelligence artificielle à l'ISIMA de
-                Clermont-Ferrand.
-            </Paragraph>
+            <Paragraph>{i18n.t.pages.home.presentation}</Paragraph>
             <img class="profile-section__picture" {src} alt="Profil" />
         </div>
     </Diagonal>

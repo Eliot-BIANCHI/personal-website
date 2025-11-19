@@ -7,6 +7,10 @@
     import ArrowUpWithStroke from "./icons/arrows/UpWithStroke.svelte";
 
     import Cross from "./icons/Cross.svelte";
+
+    import FlagEnglish from "./icons/flags/English.svelte";
+    import FlagFrench from "./icons/flags/French.svelte";
+
     import Menu from "./icons/Menu.svelte";
     import Microphone from "./icons/Microphone.svelte";
 
@@ -51,6 +55,10 @@
     <ArrowUpWithStroke />
 {:else if name === "cross"}
     <Cross />
+{:else if name === "flag--english"}
+    <FlagEnglish />
+{:else if name === "flag--french"}
+    <FlagFrench />
 {:else if name === "menu"}
     <Menu />
 {:else if name === "microphone"}

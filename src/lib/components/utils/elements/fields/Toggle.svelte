@@ -11,7 +11,7 @@
     let input: HTMLInputElement;
 </script>
 
-<div class="field">
+<div class="toggle-field">
     {#if label}
         <label class="label" for={name}>{label}</label>
     {/if}
@@ -41,7 +41,7 @@
         left: -9999px;
     }
 
-    .field {
+    .toggle-field {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
@@ -65,7 +65,9 @@
         outline: 2px solid transparent;
         outline-offset: var(--offset-md);
         position: relative;
-        transition: background-color var(--transition);
+        transition-property: background-color, opacity;
+        transition-duration: var(--transition-duration);
+        transition-timing-function: var(--transition-timing-function);
         width: calc(var(--circle-size) * 2 + var(--padding));
 
         &::before {
@@ -82,8 +84,18 @@
             width: var(--circle-size);
         }
 
+        &:hover {
+            opacity: var(--base-opacity);
+        }
+
         &:focus-visible {
             outline-color: var(--success);
+        }
+    }
+
+    input:hover {
+        & + .toggle {
+            opacity: var(--base-opacity);
         }
     }
 

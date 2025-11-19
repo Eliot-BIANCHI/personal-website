@@ -1,0 +1,21 @@
+{
+  "links": {
+    "home": "Accueil",
+    "courses": "Cours",
+    "sandbox": "Bac à sable",
+    "appendix": "Annex"
+  },
+  "settings": {
+    "title": "Paramètres",
+    "field1": {
+      "name": "Language",
+      "values": {
+        "english": "Anglais",
+        "french": "Français"
+      }
+    },
+    "field2": {
+      "name": "Assistant?"
+    }
+  }
+}

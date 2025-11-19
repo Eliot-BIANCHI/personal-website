@@ -1,34 +1,32 @@
 import type { IconName } from "$lib/components/utils/elements/types";
 
-const ROUTES = ["/", "/courses", "/sandbox", "/appendix"] as const;
-export type Route = (typeof ROUTES)[number];
+const NAMES = ["home", "courses", "sandbox", "appendix"] as const;
+type Name = (typeof NAMES)[number];
 
-interface Name {
-  en: string;
-  fr: string;
-}
+const HREFS = ["/", "/courses", "/sandbox", "/appendix"] as const;
+export type Href = (typeof HREFS)[number];
 
 interface Link {
-  href: Route;
+  href: Href;
   name: Name;
   iconName: IconName;
 }
 
 export const LINKS: Link[] = [
-  { href: "/", name: { en: "Home", fr: "Accueil" }, iconName: "navbar--home" },
+  { href: "/", name: "home", iconName: "navbar--home" },
   {
     href: "/courses",
-    name: { en: "Courses", fr: "Cours" },
+    name: "courses",
     iconName: "navbar--courses",
   },
   {
     href: "/sandbox",
-    name: { en: "Sandbox", fr: "Bac à sable" },
+    name: "sandbox",
     iconName: "navbar--sandbox",
   },
   {
     href: "/appendix",
-    name: { en: "Appendix", fr: "Annex" },
+    name: "appendix",
     iconName: "navbar--appendix",
   },
 ];

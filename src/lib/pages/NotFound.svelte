@@ -1,10 +1,11 @@
 <script>
     import Paragraph from "$lib/components/utils/elements/Paragraph.svelte";
+    import { i18n } from "$lib/i18n.svelte";
 </script>
 
 <section class="not-found">
     <h1>404</h1>
-    <Paragraph>La page que vous cherchez est introuvable</Paragraph>
+    <Paragraph>{i18n.t.pages.notFound.message}</Paragraph>
 </section>
 
 <style>

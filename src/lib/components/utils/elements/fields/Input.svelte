@@ -58,7 +58,7 @@
     }
 </script>
 
-<div class="field">
+<div class="input-field">
     {#if label}
         <label class="label" for={name}>{label}:</label>
     {/if}
@@ -151,7 +151,7 @@
 </div>
 
 <style>
-    .field {
+    .input-field {
         display: flex;
         flex-direction: column;
         gap: var(--gap-md);

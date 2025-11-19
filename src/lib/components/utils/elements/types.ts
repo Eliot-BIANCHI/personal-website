@@ -28,6 +28,8 @@ export type IconName =
   | "arrow--up"
   | "arrow--up-with-stroke"
   | "cross"
+  | "flag--english"
+  | "flag--french"
   | "menu"
   | "microphone"
   | "navbar--appendix"
@@ -43,5 +45,3 @@ export type IconName =
   | "theme--moon"
   | "theme--sun"
   | "vertical-dots";
-
-export type InputType = "text" | "number";
